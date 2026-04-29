@@ -174,12 +174,17 @@ li { margin-bottom: 0.35em; }
     padding: 16px 24px 24px;
     border-bottom: 1px solid var(--border);
     transform: translateY(-110%);
-    transition: transform var(--transition);
+    visibility: hidden;
+    transition: transform var(--transition), visibility 0s linear var(--transition);
     gap: 16px;
   }
   .nav a { padding: 8px 0; border-bottom: 1px solid var(--border); }
   .nav a:last-child { border-bottom: none; }
-  .nav-toggle:checked ~ .nav { transform: translateY(0); }
+  .nav-toggle:checked ~ .nav {
+    transform: translateY(0);
+    visibility: visible;
+    transition: transform var(--transition), visibility 0s linear 0s;
+  }
 }
 
 /* ============= HERO ============= */
